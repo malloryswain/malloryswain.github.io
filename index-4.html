@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mallory Swain's Portfolio</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#eef6ff;
+color:#333;
+}
+
+/* NAVIGATION */
+
+nav{
+background:#4a90e2;
+padding:15px 0;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+justify-content:center;
+gap:40px;
+margin:0;
+padding:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ffe066;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#6fb7ff,#a9d4ff);
+color:#083b66;
+padding:70px 20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:44px;
+}
+
+header p{
+font-size:18px;
+}
+
+/* SECTIONS */
+
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+font-size:30px;
+color:#2c5e91;
+}
+
+/* ABOUT */
+
+.about{
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+/* PROJECT GRID */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+overflow:hidden;
+transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 12px 25px rgba(74,144,226,0.4);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#ffe066;
+color:#333;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.button:hover{
+background:#ffd43b;
+transform:scale(1.05);
+}
+
+/* CONTACT */
+
+.contact{
+background:#ffffff;
+border-radius:12px;
+padding:30px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#4a90e2;
+color:white;
+margin-top:40px;
+}
+
+/* POPUP */
+
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+position:relative;
+margin:4% auto;
+width:85%;
+height:85%;
+background:white;
+border-radius:12px;
+overflow:hidden;
+}
+
+.modal iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:20px;
+font-size:32px;
+cursor:pointer;
+background:#ffe066;
+padding:5px 12px;
+border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<header>
+<h1>Mallory Swain</h1>
+<p>Creative Portfolio | Design Projects</p>
+</header>
+
+<section id="about">
+<div class="about">
+<h2>About Me</h2>
+<p>
+Hi, I'm Mallory Swain. I enjoy creating visual projects that are both creative and informative.
+This portfolio showcases presentations, infographics, invitations, and other design work I’ve created.
+</p>
+<p>
+My goal is to design projects that are engaging, organized, and visually appealing.
+</p>
+</div>
+</section>
+
+<section id="projects">
+
+<h2>Featured Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+<div class="card-content">
+<h3>All About Me Presentation</h3>
+<p>A presentation introducing my background and interests.</p>
+<button class="button" onclick="openProject('all-about-me.pdf')">Open Project</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<div class="card-content">
+<h3>Making Matcha Presentation</h3>
+<p>A step-by-step guide explaining how to make matcha.</p>
+<button class="button" onclick="openProject('making-matcha.pdf')">Open Project</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173">
+<div class="card-content">
+<h3>Exam Prep Infographic</h3>
+<p>Strategies for preparing and studying for exams.</p>
+<button class="button" onclick="openProject('exam-prep.pdf')">Open Project</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+<div class="card-content">
+<h3>Galentine's Invitation</h3>
+<p>An invitation design for a themed Galentine's event.</p>
+<button class="button" onclick="openProject('galentines-invitation.pdf')">Open Project</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<div class="card-content">
+<h3>Travel Itinerary</h3>
+<p>A planned trip itinerary for Cocoa Beach.</p>
+<button class="button" onclick="openProject('travel-itinerary.pdf')">Open Project</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<div class="card-content">
+<h3>Social Media & Mental Health Infographic</h3>
+<p>An infographic explaining how social media impacts mental health.</p>
+<button class="button" onclick="openProject('Social Media Mental Health Effects Infographic.pdf')">Open Project</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+<div class="contact">
+<h2>Contact</h2>
+<p>Email: malloryswain@abbey.bac.edu</p>
+<p>Portfolio created in 2026</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Mallory Swain Portfolio</p>
+</footer>
+
+<div id="projectModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeProject()">&times;</span>
+<iframe id="projectFrame"></iframe>
+</div>
+</div>
+
+<script>
+
+function openProject(file){
+document.getElementById("projectModal").style.display="block";
+document.getElementById("projectFrame").src=file;
+}
+
+function closeProject(){
+document.getElementById("projectModal").style.display="none";
+document.getElementById("projectFrame").src="";
+}
+
+window.onclick = function(event){
+const modal=document.getElementById("projectModal");
+if(event.target==modal){
+closeProject();
+}
+}
+
+</script>
+
+</body>
+</html>
